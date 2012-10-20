@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <JungleSolution xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Project>.\framework\framework.jiproj</Project>
   <Project>.\tools\tools.jiproj</Project>
+  <Project>.\quadtree\quadtree.jiproj</Project>
   <Project>.\unittest\unittest.jiproj</Project>
+  <Project>.\framework\framework.jiproj</Project>
 </JungleSolution>

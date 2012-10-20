@@ -2690,6 +2690,6 @@
     </DocUserOptions>
   </Files>
   <Folders>
-    <FolderStatus NodePath="unittest\sample" Expanded="true" />
+    <FolderStatus NodePath="unittest\sample" Expanded="false" />
   </Folders>
 </JiProjUserOptions>
