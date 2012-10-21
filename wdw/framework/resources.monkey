@@ -29,6 +29,16 @@ Class Resources
 	Function GetImage:Image(imageName:String)
 		Return _images.ValueForKey(imageName)
 	End
+	
+	
+	Method StoreSound:Void(soundName:String, snd:Sound)
+		If snd = Null Then Error("No sound!")
+		_sounds.Set(soundName, snd)
+	End Method
 
+	
+	Method GetSound:Sound(soundName)
+		Return _sounds.ValueForKey(soundName)
+	End Method
 
 End

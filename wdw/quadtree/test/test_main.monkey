@@ -1,5 +1,5 @@
 
-'unit tests for tools module
+'unit tests for quadtree module
 
 Strict
 
@@ -7,12 +7,9 @@ Import wdw.unittest
 
 #REFLECTION_FILTER+="*_test"
 
-
-Import vector2d_test
-Import color_test
-Import bag_test
-Import rectangle_test
-
+Import item_test
+Import node_test
+Import tree_test
 
 Function Main:Int()
 	Local t:= New TestSuite
