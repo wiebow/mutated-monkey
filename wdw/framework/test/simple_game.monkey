@@ -25,8 +25,8 @@ End
 
 Class MyGame Extends Game
 
-	Method Init:Void()		
-		Resources.StoreImage("mypic", LoadImage("objects.png", 7))
+	Method Init:Void()
+		Resources.StoreImage("mypic", LoadImage("monkey://data/objects.png", 7))
 	End
 End
 
@@ -56,8 +56,6 @@ Class TitleState Extends State
 	
 	
 	Method Enter:Void()
-	
-		
 	End Method
 
 	Method Leave:Void()
@@ -125,7 +123,6 @@ Class EndState Extends State
 	
 	Method Enter:Void()
 	End Method
-	
 	
 	Method Leave:Void()
 	End Method

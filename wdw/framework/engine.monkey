@@ -12,7 +12,7 @@ Class Engine extends App
 	Private
 	
 	'Engine update rate.
-	Field _rate:Int
+	Field _rate:Int = 60
 	
 	'The current game.
 	Field _game:Game
@@ -52,6 +52,7 @@ Class Engine extends App
 	Method OnUpdate:Int()
 		If Running = True
 			If Paused = False Then _game.Update()
+			If _game.CloseRequested = True Then Shutdown()
 		End
 		Return 0
 	End Method
@@ -109,9 +110,9 @@ Class Engine extends App
 		
 	
 	'summary: Returns the current game in the engine.	
-	Method Game:Game() Property
-		Return _game
-	End
+'	Method Game:Game() Property
+'		Return _game
+'	End
 	
 		
 	'Sets the current game.	
@@ -121,14 +122,19 @@ Class Engine extends App
 		
 	
 	'summary: Returns the engine update rate.
-	Method Rate:Int() Property
-		Return _rate
-	End
+'	Method Rate:Int() Property
+'		Return _rate
+'	End
 	
 		
 	'summary: Sets the engine update rate.	
 	Method Rate:Void(rate:Int) Property
 		_rate = rate
+	End
+	
+	
+	Method Shutdown:Void()
+		
 	End
 		
 End
