@@ -49,7 +49,7 @@ Class Rectangle
 		Self.dimension.Set(w, h)
 	End Method
 	
-	
+
 	'summary: Returns top left X value.
 	Method x:Float() Property
 		Return Self.position.x

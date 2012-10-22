@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<JiProjUserOptions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<JiProjUserOptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Files>
     <DocUserOptions Filename=".\sample\simple_test.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="155">
       <CursorPos>
@@ -342,10 +342,10 @@
       </OutLiningSplitSerialization>
       <DocGUID />
     </DocUserOptions>
-    <DocUserOptions Filename=".\assert.monkey" Open="false" SplitView="false" SplitIsVertical="true" SplitSize="0">
+    <DocUserOptions Filename=".\assert.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="155">
       <CursorPos>
-        <X>0</X>
-        <Y>0</Y>
+        <X>4</X>
+        <Y>15</Y>
       </CursorPos>
       <OutLiningSerialization>
         <Folding_Nodes_Collection>
@@ -2690,6 +2690,9 @@
     </DocUserOptions>
   </Files>
   <Folders>
-    <FolderStatus NodePath="unittest\sample" Expanded="false" />
+    <FolderStatus NodePath="unittest\sample" Expanded="true" />
+    <FolderStatus NodePath="unittest\sample\simple_test.build" Expanded="false" />
+    <FolderStatus NodePath="unittest\sample\simple_test.build\html5" Expanded="false" />
+    <FolderStatus NodePath="unittest\sample\simple_test.build\html5\data" Expanded="false" />
   </Folders>
 </JiProjUserOptions>

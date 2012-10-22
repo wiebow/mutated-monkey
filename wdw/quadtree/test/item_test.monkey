@@ -23,7 +23,18 @@ Class ItemTest Extends Test
 	Method ConstructorTest:Void()
 		assertNotNull(i, "No Item")
 		assertNotNull(i.BoundingBox, "No Rectangle")
-		assertNotNull(i.Position, "No Position")
 	End Method
+	
+	Method UpdateTest:Void()
+		i.Update(50, 50)
+		
+		'bounding box topleft should be at 0,0
+		assertEquals(0.0, i.BoundingBox.x, "x")
+		assertEquals(0.0, i.BoundingBox.y, "y")		
+		
+		i.Update(100, 100)
+		assertEquals(50.0, i.BoundingBox.x, "x1")
+		assertEquals(50.0, i.BoundingBox.y, "y1")
+	End
 	
 End Class

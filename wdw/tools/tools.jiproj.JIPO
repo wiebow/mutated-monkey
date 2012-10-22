@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<JiProjUserOptions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<JiProjUserOptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Files>
     <DocUserOptions Filename=".\test\bag_test.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="155">
       <CursorPos>
@@ -2780,8 +2780,8 @@
     </DocUserOptions>
     <DocUserOptions Filename=".\rectangle.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="155">
       <CursorPos>
-        <X>11</X>
-        <Y>73</Y>
+        <X>40</X>
+        <Y>106</Y>
       </CursorPos>
       <OutLiningSerialization>
         <Folding_Nodes_Collection>

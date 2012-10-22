@@ -17,7 +17,7 @@ Class QuadTreeNode
 	'node items if not partinioned.
 	Field items:List<QuadTreeItem>
 	
-	'child nodes will go here
+	'child nodes will go here.
 	'0 = topleft, 1 = topright, 2 = bottomleft, 3 = bottomright.
 	'if this node contains nodes, then it cannot contain items
 	'and is a branch node.
@@ -31,16 +31,18 @@ Class QuadTreeNode
 	'reference to this node's parent node.
 	Field parentNode:QuadTreeNode
 	
+	'reference to this node tree.
 	Field parentTree:QuadTree
 			
 	Public
 	
 	
 	'summary: Constructor.
-	Method New(x:Int, y:Int, w:Int, h:Int, tree:QuadTree, maxI:Int, node:QuadTreeNode = Null)
+	Method New(x:Int, y:Int, w:Int, h:Int, tree:QuadTree, maxI:Int = DEFAULT_MAX_ITEMS, node:QuadTreeNode = Null)
 		Self.items = New List<QuadTreeItem>
-		Self.area = New Rectangle(x, y, w, h, True)
+		Self.area = New Rectangle(x, y, w, h, False)
 		Self.partitioned = False
+		Self.MaxItems = maxI
 		Self.ParentNode = node
 		Self.ParentTree = tree
 	End Method
@@ -66,7 +68,7 @@ Class QuadTreeNode
 	End Method
 	
 	
-	Method MaxItems:Int(i:int) Property
+	Method MaxItems:Void(i:int) Property
 		maxItems = i
 	End Method
 	
@@ -100,7 +102,6 @@ Class QuadTreeNode
 	'partitions this node and pushes items into new nodes
 	Method Partition:Void()
 		If Not partitioned
-			
 			Local childWidth:Int = area.width / 2
 			Local childHeight:Int = area.height / 2
 			
@@ -120,12 +121,11 @@ Class QuadTreeNode
 				PushItemDown(i)
 			End For
 		End If
-		
 	End Method
 	
 	
 	'summary: adds all items in this and child nodes to passed list.
-	Method GetAllItems:Void(l:List)
+	Method GetAllItems:Void(l:List<QuadTreeItem>)
 	
 		'add all items in this node to the passed list
 		For Local i:= EachIn items
@@ -167,7 +167,6 @@ Class QuadTreeNode
 			'not added to child node: add to this node
 			'but only once
 			If items.Contains(i) Then Return
-			
 			items.AddLast(i)
 			i.Parent = Self
 			
@@ -210,6 +209,7 @@ Class QuadTreeNode
 	End Method
 	
 	
+	'summary: Moves item in tree. Used after an object has changed position.
 	Method MoveItem:Void(i:QuadTreeItem)
 		If Not PushItemDown(i)
 			'no child node accepts this item,
@@ -218,16 +218,31 @@ Class QuadTreeNode
 				PushItemUp(i)
 			ElseIf Not area.ContainsRectangle(i.BoundingBox)
 				'we're in root node and item does not fit
-				'we need to resize the world
-				
+				'we need to resize the world				
 				parentTree.Resize(i.BoundingBox)
 			End If
 		End If
 	End Method
 	
-		
+	
+	'returns true of specified rect fits in this node.
 	Method RectInNode:Bool(r:Rectangle)
 		Return area.ContainsRectangle(r)
 	End Method
+		
+	
+	Method Area:Rectangle() Property
+		Return area
+	End
+	
+	
+	Method Nodes:QuadTreeNode[]() Property
+		Return nodes
+	End
+	
+	
+	Method Items:List<QuadTreeItem>() Property
+		Return items
+	End
 	
 End Class

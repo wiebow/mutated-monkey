@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<JiProjUserOptions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<JiProjUserOptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Files>
     <DocUserOptions Filename=".\state\transition\emptytransition.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="0">
       <CursorPos>
@@ -2850,14 +2850,14 @@
     <FolderStatus NodePath="framework\test\simple_game.build\android\bin" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\bin\classes" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\bin\classes\com" Expanded="false" />
-    <FolderStatus NodePath="framework\test\simple_game.build\android\bin\classes\com\monkey" Expanded="false" />
+    <FolderStatus NodePath="framework\test\simple_game.build\android\bin\classes\com\wdw" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\bin\res" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\bin\res\drawable-hdpi" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\bin\res\drawable-ldpi" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\bin\res\drawable-mdpi" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\gen" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\gen\com" Expanded="false" />
-    <FolderStatus NodePath="framework\test\simple_game.build\android\gen\com\monkey" Expanded="false" />
+    <FolderStatus NodePath="framework\test\simple_game.build\android\gen\com\wdw" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\libs" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\nativegl" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\nativegl\jni" Expanded="false" />
@@ -2884,13 +2884,15 @@
     <FolderStatus NodePath="framework\test\simple_game.build\android\res\values" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\src" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\src\com" Expanded="false" />
-    <FolderStatus NodePath="framework\test\simple_game.build\android\src\com\monkey" Expanded="false" />
+    <FolderStatus NodePath="framework\test\simple_game.build\android\src\com\wdw" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\templates" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\templates\res" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\templates\res\layout" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\templates\src" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\templates\src\com" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\templates\src\com\monkey" Expanded="false" />
+    <FolderStatus NodePath="framework\test\simple_game.build\html5" Expanded="false" />
+    <FolderStatus NodePath="framework\test\simple_game.build\html5\data" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.data" Expanded="true" />
   </Folders>
 </JiProjUserOptions>

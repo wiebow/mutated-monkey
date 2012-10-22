@@ -1,12 +1,12 @@
 
-
 Strict
 
 Import node
 
+Const DEFAULT_MAX_ITEMS:Int = 50
 
-Const DEFAULT_MAX_ITEMS:int = 50
 
+'summary: Partioning space quad tree.
 Class QuadTree
 
 	Private
@@ -14,10 +14,10 @@ Class QuadTree
 	'root node
 	Field head:QuadTreeNode
 	
-	'max items in a node before partioning
+	'max items in a node before partioning.
 	Field maxItems:Int
 	
-	'total world size
+	'total world size.
 	Field area:Rectangle
 	
 	Public
@@ -26,6 +26,8 @@ Class QuadTree
 	'summary: Constructor.
 	Method New(x:Int, y:Int, w:Int, h:Int)
 		Self.area = New Rectangle(x, y, w, h)
+		Self.maxItems = DEFAULT_MAX_ITEMS
+		Self.head = New QuadTreeNode(x, y, w, h, Self, Self.maxItems, Null)
 	End Method
 	
 	
@@ -53,12 +55,11 @@ Class QuadTree
 	
 	
 	'resizes the world until passed rectangle fits inside.
+	'and then re-enters all the items.
 	Method Resize:Void(r:Rectangle)
 		While Not area.ContainsRectangle(r)
-			area.x *= 2
-			area.y *= 2
-			area.width *= 2
-			area.height *= 2
+			area.SetPosition(area.x * 2, area.y * 2)
+			area.SetDimension(area.width * 2, area.height * 2)
 		End While
 		
 		'done. get all items in the tree.
@@ -93,6 +94,16 @@ Class QuadTree
 		Local l:= New List<QuadTreeItem>
 		head.GetAllItems()
 		Return l
+	End Method
+	
+	
+	Method Area:Rectangle() Property
+		Return area
+	End Method
+	
+	
+	Method Head:QuadTreeNode() Property
+		Return head
 	End Method
 	
 End Class
