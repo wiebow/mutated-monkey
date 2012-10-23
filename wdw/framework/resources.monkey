@@ -23,22 +23,22 @@ Class Resources
 	Function StoreImage:Void(imageName:String, img:Image)
 		If img = Null Then Error("no pic!")
 		_images.Set(imageName, img)
-	End
+	End Function
 	
 	
 	Function GetImage:Image(imageName:String)
 		Return _images.ValueForKey(imageName)
-	End
+	End Function
 	
 	
-	Method StoreSound:Void(soundName:String, snd:Sound)
+	Function StoreSound:Void(soundName:String, snd:Sound)
 		If snd = Null Then Error("No sound!")
 		_sounds.Set(soundName, snd)
-	End Method
+	End Function
 
 	
-	Method GetSound:Sound(soundName)
+	Function GetSound:Sound(soundName:String)
 		Return _sounds.ValueForKey(soundName)
-	End Method
+	End Function
 
-End
+End Class

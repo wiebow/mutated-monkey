@@ -5,8 +5,7 @@ Import node
 
 Const DEFAULT_MAX_ITEMS:Int = 50
 
-
-'summary: Partioning space quad tree.
+'summary: Partioned space quad tree.
 Class QuadTree
 
 	Private
@@ -20,6 +19,9 @@ Class QuadTree
 	'total world size.
 	Field area:Rectangle
 	
+	'list used for items and resizing of tree.
+	Field itemList:List<QuadTreeItem>
+	
 	Public
 	
 	
@@ -28,6 +30,7 @@ Class QuadTree
 		Self.area = New Rectangle(x, y, w, h)
 		Self.maxItems = DEFAULT_MAX_ITEMS
 		Self.head = New QuadTreeNode(x, y, w, h, Self, Self.maxItems, Null)
+		Self.itemList = New List<QuadTreeItem>
 	End Method
 	
 	
@@ -63,8 +66,8 @@ Class QuadTree
 		End While
 		
 		'done. get all items in the tree.
-		Local l:= New List<QuadTreeItem>
-		head.GetAllItems(l)
+		itemList.Clear()
+		head.GetAllItems(itemList)
 		
 		'cut down tree.
 		head.Free()
@@ -74,7 +77,7 @@ Class QuadTree
 		head = New QuadTreeNode(area.x, area.y, area.width, area.height, Self, maxItems, Null)
 		
 		're-insert items.
-		For Local i:QuadTreeItem = EachIn l
+		For Local i:QuadTreeItem = EachIn itemList
 			head.InsertItem(i)
 		End For
 	
@@ -83,17 +86,17 @@ Class QuadTree
 	
 	'summary: Returns a list of all items in the tree that are overlapped by passed rectangle.	
 	Method GetItems:List(r:Rectangle)
-		Local l:= New List<QuadTreeItem>
-		head.GetItems(l, r)
-		Return l
+		itemList.Clear()
+		head.GetItems(itemList, r)
+		Return itemList
 	End Method
 	
 	
 	'summary: Returns a list of all the items in the tree.
 	Method GetAllItems:List()
-		Local l:= New List<QuadTreeItem>
-		head.GetAllItems()
-		Return l
+		itemList.Clear()
+		head.GetAllItems(itemList)
+		Return itemList
 	End Method
 	
 	

@@ -21,7 +21,7 @@ Class TreeTest Extends Test
 	
 	Method ConstructorTest:Void()
 		assertNotNull(t, "not created!")
-		assertNotNull(t.Area, "Rectangle not present!")
+		assertNotNull(t.Area, "Area not present!")
 		assertNotNull(t.Head, "Head node not present!")
 		assertEquals(DEFAULT_MAX_ITEMS, t.MaxItems, "Maxitems")
 	End Method
