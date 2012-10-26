@@ -43,10 +43,10 @@ Class Bag<T>
 	End
 		
 	
-	'summary: Expands the bag size.
+	'summary: Expands the bag capacity.
 	Method Grow:Void(newSize:Int = 0)
 		If newSize = 0 Then newSize = (_arr.Length() * 3) / 2 + 1
-		_arr = _arr[..newSize]
+		_arr = _arr.Resize(newSize)
 	End
 		
 	
@@ -68,7 +68,7 @@ Class Bag<T>
 			_currentSlot = index + 1
 		ElseIf index >= _currentSlot
 			_currentSlot = index+1				
-		End If		
+		End If
 		_arr[index] = o
 	End Method
 	

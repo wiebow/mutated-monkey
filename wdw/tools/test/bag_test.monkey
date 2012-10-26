@@ -109,6 +109,19 @@ Class BagTest Extends Test
 		assertTrue(b.Contains(o1), "")
 		assertTrue(b.Contains(o2), "")
 	End
+	
+	Method GrowZeroTest:Void()
+		b.Grow()
+		assertEquals(25, b.Capacity, "grow zero")
+	End Method
+	
+	
+	Method GrowTest:Void()
+		b.Grow(100)
+		assertEquals(100, b.Capacity, "grow")		
+	End Method
+	
+	
 End
 
 
