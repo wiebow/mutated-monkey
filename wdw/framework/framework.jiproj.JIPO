@@ -2840,7 +2840,7 @@
     </DocUserOptions>
   </Files>
   <Folders>
-    <FolderStatus NodePath="framework\state" Expanded="true" />
+    <FolderStatus NodePath="framework\state" Expanded="false" />
     <FolderStatus NodePath="framework\state\transition" Expanded="true" />
     <FolderStatus NodePath="framework\test" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build" Expanded="false" />

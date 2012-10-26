@@ -65,5 +65,5 @@
       </CursorPos>
     </Document>
   </Files>
-  <CompilerConfig Configuration="debug" BuildMode="run" Target="android" />
+  <CompilerConfig Configuration="debug" BuildMode="run" Target="html5" />
 </JiProj>
