@@ -4244,6 +4244,53 @@
   <Folders>
     <FolderStatus NodePath="tools\test" Expanded="true" />
     <FolderStatus NodePath="tools\test\test_main.build" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\assets" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\assets\monkey" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\bin" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\bin\classes" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\bin\classes\com" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\bin\classes\com\monkey" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\bin\res" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\bin\res\drawable-hdpi" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\bin\res\drawable-ldpi" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\bin\res\drawable-mdpi" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\gen" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\gen\com" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\gen\com\monkey" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\libs" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\nativegl" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\nativegl\jni" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\nativegl\libs" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\nativegl\libs\armeabi" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\nativegl\libs\armeabi-v7a" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\nativegl\libs\x86" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\nativegl\obj" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\nativegl\obj\local" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\nativegl\obj\local\armeabi" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\nativegl\obj\local\armeabi\objs" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\nativegl\obj\local\armeabi\objs\nativegl" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\nativegl\obj\local\armeabi-v7a" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\nativegl\obj\local\armeabi-v7a\objs" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\nativegl\obj\local\armeabi-v7a\objs\nativegl" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\nativegl\obj\local\x86" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\nativegl\obj\local\x86\objs" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\nativegl\obj\local\x86\objs\nativegl" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\res" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\res\drawable-hdpi" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\res\drawable-ldpi" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\res\drawable-mdpi" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\res\layout" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\res\values" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\src" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\src\com" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\src\com\monkey" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\templates" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\templates\res" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\templates\res\layout" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\templates\src" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\templates\src\com" Expanded="false" />
+    <FolderStatus NodePath="tools\test\test_main.build\android\templates\src\com\monkey" Expanded="false" />
     <FolderStatus NodePath="tools\test\test_main.build\html5" Expanded="false" />
     <FolderStatus NodePath="tools\test\test_main.build\html5\data" Expanded="false" />
   </Folders>

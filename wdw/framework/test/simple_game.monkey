@@ -18,6 +18,9 @@ Function Main:Int()
 	g.AddGameState(New PlayState, STATE_PLAYSTATE)
 	g.AddGameState(New EndState, STATE_ENDSTATE)
 	
+	'force stuff
+	g.GetStateByID(STATE_TITLESTATE).Enter()
+	
 	Local e:Engine = New Engine(g, 60)
 	Return 0
 End
@@ -26,13 +29,26 @@ End
 Class MyGame Extends Game
 
 	Method Init:Void()
-		Resources.StoreImage("mypic", LoadImage("monkey://data/objects.png", 7))
+		Resources.StoreImageFrames("mypic", LoadImage("monkey://data/objects.png"), 16, 16)
+		
+		'force enter method
+		Self.GetStateByID(STATE_TITLESTATE).Enter()
+		
 	End
 End
 
 
 
 Class TitleState Extends State
+
+	Field frames:Image[]
+	Field currentFrame:Int
+	
+	Method Enter:Void()
+		frames = Resources.GetImageFrames("mypic")
+		currentFrame = 0
+	End Method
+
 
 	Method Render:Void()
 		Cls(255, 255, 255)
@@ -41,22 +57,21 @@ Class TitleState Extends State
 		DrawText("This is the title screen", 0, 0)
 		DrawText("Press SPACE to start", 0, 20)
 		
-		DrawImage(Resources.GetImage("mypic"), 100, 100, 0)
+		DrawImage(frames[currentFrame], 100, 100)
 		
 	End Method
-	
 	
 	
 	Method Update:Void()
 		If TouchHit()
 			Game.EnterState(STATE_PLAYSTATE, New FadeInTransition, New FadeOutTransition)
 		End If
+		
+		If KeyHit(KEY_RIGHT) Then currentFrame += 1
+		If currentFrame = frames.Length() Then currentFrame = 0
+		
 	End Method
-	
-	
-	
-	Method Enter:Void()
-	End Method
+
 
 	Method Leave:Void()
 	End Method
@@ -81,8 +96,7 @@ Class PlayState Extends State
 		SetColor 255, 0, 0
 		DrawRect(xpos - 10, ypos - 10, 20, 20)		
 	End Method
-	
-	
+		
 	
 	Method Update:Void()
 		If TouchHit()
@@ -95,11 +109,11 @@ Class PlayState Extends State
 		If KeyDown(KEY_RIGHT) Then xpos += 2		
 		
 	End Method
-	
-	
+		
 
 	Method Enter:Void()
 	End Method
+	
 	
 	Method Leave:Void()
 	End Method

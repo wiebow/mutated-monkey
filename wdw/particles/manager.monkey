@@ -14,6 +14,7 @@ Class ParticleManager
 
 	Field available:Bag<Particle>
 	Field active:Bag<Particle>
+	Field frames:Image[]
 	
 	Public
 
@@ -22,14 +23,24 @@ Class ParticleManager
 	Method New(poolSize:Int = PARTICLE_POOL_SIZE)
 		active = New Bag<Particle>(poolSize)
 		available = New Bag<Particle>(poolSize)
+	End Method
+	
+	
+	'summary: Sets the particle image frames and create particle pool.
+	Method Initialize:Void(imageFrames:Image[])
+		frames = imageFrames
+		
+		'set global image field in particle Class
+		Particle.SetImageFrames(frames)
 		
 		'create pool of particles
+		'images are passed to particle.
 		For Local i:Int = 0 To available.Capacity() -1
 			available.Add(New Particle)
 		End For
 	End Method
-	
-	
+		
+		
 	'summary: Updates all in-use particles.
 	Method Update:Void()
 		For Local index:Int = 0 To active.Size() -1
@@ -39,15 +50,17 @@ Class ParticleManager
 			If finished
 				active.RemoveByIndex(index)
 				available.Add(particle)
+'			EndIf
 			End If
 		End For
-		
 	End Method
 	
 	
 	'summary: Renders all in-use particles.
 	Method Render:Void()
-		
+		For Local i:Int = 0 To active.Size() -1
+			active.Get(i).Render()
+		End For
 	End Method
 	
 	
@@ -70,7 +83,7 @@ Class ParticleManager
 	
 	Method CleanUp:Void()
 		available = Null
-		inuse = Null
+		active = Null
 	End Method
 	
 	
@@ -84,9 +97,3 @@ Class ParticleManager
 	End Method
 
 End Class
-
-'example particle effects creation functions
-
-'Function CreateExplosion(x:Float, y:Float, amount:Float, force:Float)
-'End Function
-

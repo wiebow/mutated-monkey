@@ -3,7 +3,6 @@
 
 Import engine
 Import game
-Import resources
 Import state.transition.fadeintransition
 Import state.transition.fadeouttransition
 Import state.transition.emptytransition
