@@ -2,6 +2,6 @@
 Strict
 
 Import particle
-Import manager
-Import emitter
+Import particlesystem
+Import particleemitter
 

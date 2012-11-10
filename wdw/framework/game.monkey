@@ -119,7 +119,7 @@ Class Game
 		leaveTransition = leave
 		
 		nextState = GetStateByID(id)
-		If Not _nextState Then Error("Cannot find state with ID: " + id)
+		If Not nextState Then Error("Cannot find state with ID: " + id)
 		
 		leaveTransition.Init()
 	End

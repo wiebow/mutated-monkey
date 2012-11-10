@@ -8,7 +8,8 @@ Import wdw.unittest
 #REFLECTION_FILTER+="*_test"
 
 
-Import manager_test
+Import particle_test
+Import particleemitter_test
 
 
 Function Main:Int()

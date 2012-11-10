@@ -20,11 +20,11 @@ Class ColorTest Extends Test
 	End
 	
 	Method SetTest:Void()
-		c.Set(255,100,50,0.6)		
-		assertEquals(c.r, 255.0, "")
-		assertEquals(c.g, 100.0, "")
-		assertEquals(c.b, 50.0, "")
-		assertEquals(c.a, 0.6, "")
+		c.Set(255, 100, 50, 0.6)
+		assertEquals(c.r, 255, "r")
+		assertEquals(c.g, 100, "g")
+		assertEquals(c.b, 50, "b")
+		assertEquals(c.a, 0.6, "a")
 	End	
 	
 End

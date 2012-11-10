@@ -9,13 +9,13 @@ Class Color
 	Private
 	
 	'summary: Red component.
-	Field _r:float
+	Field _r:Int
 	
 	'summary: Green component.
-	Field _g:float
+	Field _g:Int
 	
 	'summary: Blue component.
-	Field _b:float
+	Field _b:Int
 	
 	'summary: Alpha component.
 	Field _a:Float
@@ -24,7 +24,7 @@ Class Color
 	
 	
 	'summary: Default constructor
-	Method New(red:Float, green:Float, blue:Float, alpha:float)
+	Method New(red:Int, green:Int, blue:Int, alpha:float)
 		_r = red
 		_g = green
 		_b = blue
@@ -33,7 +33,7 @@ Class Color
 		
 	
 	'summary: Sets all components.
-	Method Set:Void(red:Float, green:Float, blue:Float, alpha:float)
+	Method Set:Void(red:Int, green:Int, blue:Int, alpha:float)
 		_r = red
 		_g = green
 		_b = blue
@@ -41,27 +41,27 @@ Class Color
 	End
 		
 		
-	Method r:Float() Property
+	Method r:Int() Property
 		Return _r
 	End
 	
-	Method r:Void(red:Float) Property
+	Method r:Void(red:Int) Property
 		_r = red
 	End
 		
-	Method g:Float() property
+	Method g:Int() property
 		Return _g
 	End
 	
-	Method g:Void(green:Float) Property
+	Method g:Void(green:Int) Property
 		_g = green
 	End
 	
-	Method b:Float() property
+	Method b:Int() property
 		Return _b
 	End
 	
-	Method b:Void(blue:Float) Property
+	Method b:Void(blue:Int) Property
 		_r = blue
 	End
 	

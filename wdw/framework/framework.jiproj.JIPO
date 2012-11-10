@@ -1937,20 +1937,19 @@
       </OutLiningSplitSerialization>
       <DocGUID />
     </DocUserOptions>
-    <DocUserOptions Filename=".\framework.monkey" Open="true" SplitView="false" SplitIsVertical="false" SplitSize="155">
+    <DocUserOptions Filename=".\framework.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="155">
       <CursorPos>
         <X>13</X>
         <Y>3</Y>
       </CursorPos>
       <OutLiningSerialization />
       <OutLiningSplitSerialization />
-      <DocGUID>a928aae2-6502-4327-b600-9d1ea66e16bc</DocGUID>
-      <Bookmarks />
+      <DocGUID />
     </DocUserOptions>
-    <DocUserOptions Filename=".\game.monkey" Open="true" SplitView="false" SplitIsVertical="false" SplitSize="155">
+    <DocUserOptions Filename=".\game.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="155">
       <CursorPos>
-        <X>25</X>
-        <Y>26</Y>
+        <X>24</X>
+        <Y>123</Y>
       </CursorPos>
       <OutLiningSerialization>
         <Folding_Nodes_Collection>
@@ -2226,13 +2225,13 @@
         <Folding_Nodes_Collection>
           <Collapsed_Text>...</Collapsed_Text>
           <EndPoint>
-            <X>66</X>
+            <X>65</X>
             <Y>121</Y>
           </EndPoint>
           <IsEmpty>false</IsEmpty>
           <ASTNestingLevel>2</ASTNestingLevel>
           <StartPoint>
-            <X>24</X>
+            <X>23</X>
             <Y>121</Y>
           </StartPoint>
           <Text>...</Text>
@@ -2573,13 +2572,13 @@
         <Folding_Nodes_Collection>
           <Collapsed_Text>...</Collapsed_Text>
           <EndPoint>
-            <X>66</X>
+            <X>65</X>
             <Y>121</Y>
           </EndPoint>
           <IsEmpty>false</IsEmpty>
           <ASTNestingLevel>2</ASTNestingLevel>
           <StartPoint>
-            <X>24</X>
+            <X>23</X>
             <Y>121</Y>
           </StartPoint>
           <Text>...</Text>
@@ -2646,8 +2645,7 @@
           <Expanded>true</Expanded>
         </Folding_Nodes_Collection>
       </OutLiningSplitSerialization>
-      <DocGUID>3a79fcd3-8715-4781-9e77-7795800a287f</DocGUID>
-      <Bookmarks />
+      <DocGUID />
     </DocUserOptions>
     <DocUserOptions Filename=".\resources.monkey" Open="false" SplitView="false" SplitIsVertical="true" SplitSize="0">
       <CursorPos>
@@ -3023,8 +3021,8 @@
   </Files>
   <Folders>
     <FolderStatus NodePath="framework\state" Expanded="true" />
-    <FolderStatus NodePath="framework\state\transition" Expanded="true" />
-    <FolderStatus NodePath="framework\test" Expanded="true" />
+    <FolderStatus NodePath="framework\state\transition" Expanded="false" />
+    <FolderStatus NodePath="framework\test" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\android\assets" Expanded="false" />
@@ -3075,6 +3073,6 @@
     <FolderStatus NodePath="framework\test\simple_game.build\android\templates\src\com\monkey" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\html5" Expanded="false" />
     <FolderStatus NodePath="framework\test\simple_game.build\html5\data" Expanded="false" />
-    <FolderStatus NodePath="framework\test\simple_game.data" Expanded="true" />
+    <FolderStatus NodePath="framework\test\simple_game.data" Expanded="false" />
   </Folders>
 </JiProjUserOptions>

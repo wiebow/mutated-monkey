@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <JiProjUserOptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Files>
-    <DocUserOptions Filename=".\test\bag_test.monkey" Open="false" SplitView="false" SplitIsVertical="true" SplitSize="0">
+    <DocUserOptions Filename=".\test\bag_test.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="155">
       <CursorPos>
         <X>0</X>
         <Y>0</Y>
@@ -402,10 +402,10 @@
       </OutLiningSplitSerialization>
       <DocGUID />
     </DocUserOptions>
-    <DocUserOptions Filename=".\test\color_test.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="155">
+    <DocUserOptions Filename=".\test\color_test.monkey" Open="false" SplitView="false" SplitIsVertical="true" SplitSize="0">
       <CursorPos>
-        <X>15</X>
-        <Y>14</Y>
+        <X>0</X>
+        <Y>0</Y>
       </CursorPos>
       <OutLiningSerialization>
         <Folding_Nodes_Collection>
@@ -2467,10 +2467,10 @@
       </OutLiningSplitSerialization>
       <DocGUID />
     </DocUserOptions>
-    <DocUserOptions Filename=".\color.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="155">
+    <DocUserOptions Filename=".\color.monkey" Open="false" SplitView="false" SplitIsVertical="true" SplitSize="0">
       <CursorPos>
-        <X>1</X>
-        <Y>81</Y>
+        <X>0</X>
+        <Y>0</Y>
       </CursorPos>
       <OutLiningSerialization>
         <Folding_Nodes_Collection>
