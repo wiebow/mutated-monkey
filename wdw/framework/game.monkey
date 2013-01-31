@@ -6,7 +6,6 @@ Import wdw.tools.bag
 Import state
 Import state.transition.emptytransition
 Import resources
-Import wdw.particles
 
 
 'summary: A state based game, with transitions.
@@ -70,8 +69,7 @@ Class Game
 	End
 	
 	
-	'Updates the game.
-	Method Update:Void()	
+	Method Update:Void()
 		If leaveTransition
 			leaveTransition.Update()
 			If leaveTransition.IsComplete()

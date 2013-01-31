@@ -2,25 +2,25 @@
 Strict
 
 Import wdw.unittest
-Import wdw.particles.particleemitter
+Import wdw.particles.configurableemitter
 
 
-Class ParticleTest Extends Test
+Class EmitterTest Extends Test
 	
-	Field e:ParticleEmitter
+	Field e:ConfigurableEmitter
 	
-	Method DoBefore:Void()
-		e = New ParticleEmitter()
-	End Method
+'	Method DoBefore:Void()
+'		e = New ParticleEmitter()
+'	End Method
 	
-	Method DoAfter:Void()
-		e = Null
-	End Method
+'	Method DoAfter:Void()
+'		e = Null
+'	End Method
 	
 	
-	Method ConstructorTest:Void()
-		assertNotNull(e, "")
-	End Method
+'	Method ConstructorTest:Void()
+'		assertNotNull(e, "")
+'	End Method
 	
 	
 End Class

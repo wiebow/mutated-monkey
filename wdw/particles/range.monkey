@@ -1,7 +1,7 @@
 
 Strict
 
-
+'A simple range value.
 Class Range
 	
 	Private
