@@ -40,17 +40,17 @@ Class RectTest Extends Test
 	End Method
 	
 	
-	Method PointInsideTest:Void()
+	Method InsideTest:Void()
 		r.SetPosition(0, 0)
 		r.SetDimension(50, 50)
 		
 		'inside
 		Local p:= New Vector2D(10, 10)
-		assertTrue(r.PointInside(p), "Is inside")
+		assertTrue(r.Inside(p), "Is inside")
 		
 		'outside
 		p.Set(-10, 10)
-		assertFalse(r.PointInside(p), "Is outside")
+		assertFalse(r.Inside(p), "Is outside")
 	End Method
 	
 	
@@ -78,11 +78,11 @@ Class RectTest Extends Test
 		
 		'intersect		
 		Local r2:= New Rectangle(20, 20, 50, 50)
-		assertTrue(r.IntersectsRectangle(r2), "Intersects")
+		assertTrue(r.OverlappedBy(r2), "Overlapped")
 		
 		'no intersect
 		r2.SetPosition(100, 100)
-		assertFalse(r.IntersectsRectangle(r2), "No Intersect")
+		assertFalse(r.OverlappedBy(r2), "Not Overlapped")
 	End Method
 	
 End

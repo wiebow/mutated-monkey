@@ -75,26 +75,30 @@ Class Rectangle
 
 	
 	'summary: Returns true if passed coordinates are inside this rectangle.
-	Method XYInside:Bool(x:Float, y:Float)
-		Return x >= Self.x And x <= Self.x + Self.width And y >= Self.y And y <= Self.y + Self.height
+	Method Inside:Bool(x:Float, y:Float)
+		Return x >= Self.x And x <= Self.x + Self.width And
+				y >= Self.y And y <= Self.y + Self.height
 	End Method
 	
 	
 	'summary: Returns true if passed vector point is inside this rectangle.	
-	Method PointInside:Bool(p:Vector2D)
-		Return p.x >= Self.x And p.x <= Self.x + Self.width And p.y >= Self.y And p.y <= Self.y + Self.height
+	Method Inside:Bool(p:Vector2D)
+		Return p.x >= Self.x And p.x <= Self.x + Self.width And
+				p.y >= Self.y And p.y <= Self.y + Self.height
 	End Method
 	
 	
 	'returns true if this rectangle contains passed rectangle.
 	Method ContainsRectangle:Bool(r:Rectangle)
-		Return (r.x >= Self.x) And (r.x + r.width <= Self.x + Self.width) And (r.y >= Self.y) And (r.y + r.height <= Self.y + Self.height)	
+		Return (r.x >= Self.x) And (r.x + r.width <= Self.x + Self.width) And
+				(r.y >= Self.y) And (r.y + r.height <= Self.y + Self.height)
 	End Method
 	
 	
 	'returns true if this rectangle overlaps passed rectangle.
-	Method IntersectsRectangle:Bool(r:Rectangle)
-		Return (Self.x + Self.width >= r.x) And (Self.y + Self.height >= r.y) And (Self.x <= r.x + r.width) And (Self.y <= Self.y + r.height)
+	Method OverlappedBy:Bool(r:Rectangle)
+		Return (Self.x + Self.width >= r.x) And (Self.y + Self.height >= r.y) And
+				(Self.x <= r.x + r.width) And (Self.y <= Self.y + r.height)
 	End Method
 	
 	
