@@ -2,8 +2,8 @@
 ' This sample shows how to create a simple state based game.
 
 Strict
-
 Import wdw.framework
+Import wdw.framework.autofit
 
 
 Const STATE_TITLESTATE:Int = 0
@@ -12,30 +12,30 @@ Const STATE_ENDSTATE:Int = 2
 
 
 Function Main:Int()
-	Local g:MyGame = New MyGame
-	g.Title = "State Test"
-	g.AddGameState(New TitleState, STATE_TITLESTATE)
-	g.AddGameState(New PlayState, STATE_PLAYSTATE)
-	g.AddGameState(New EndState, STATE_ENDSTATE)
-	
-	'force stuff
-	g.GetStateByID(STATE_TITLESTATE).Enter()
-	
-	Local e:Engine = New Engine(g, 60)
+	Local e:= New fwEngine(New MyGame, 60)
 	Return 0
 End
 
 
-Class MyGame Extends Game
+Class MyGame Extends fwGame
 
-	Method Init:Void()
-		Resources.StoreImageFrames("mypic", LoadImage("monkey://data/objects.png"), 16, 16)
+	Method Initialize:Void()
+		Title = "Simple Game"
 		
-		'force enter method
-		Self.GetStateByID(STATE_TITLESTATE).Enter()
+		'load resources
+		Image.DefaultFlags = Image.MidHandle
+		fwResources.StoreImageFrames("mypic", LoadImage("monkey://data/mannetje.png"), 32, 32)
+'		frResources.StoreImageFrames("tiles", LoadImage("monkey://data/tiles.png"), 32, 32)
 		
-	End
-End
+		'create states
+		AddGameState(New TitleState, STATE_TITLESTATE)
+		AddGameState(New PlayState, STATE_PLAYSTATE)
+		AddGameState(New EndState, STATE_ENDSTATE)
+		
+		'set game resolution
+	'	SetGameResolution(320, 240)
+	End Method
+End Class
 
 
 
@@ -44,8 +44,13 @@ Class TitleState Extends State
 	Field frames:Image[]
 	Field currentFrame:Int
 	
+	
+	Method New()
+		frames = fwResources.GetImageFrames("mypic")
+	End Method
+	
+	
 	Method Enter:Void()
-		frames = Resources.GetImageFrames("mypic")
 		currentFrame = 0
 	End Method
 
@@ -57,8 +62,9 @@ Class TitleState Extends State
 		DrawText("This is the title screen", 0, 0)
 		DrawText("Press SPACE to start", 0, 20)
 		
+		SetColor 255, 255, 255
+		Scale 2, 2
 		DrawImage(frames[currentFrame], 100, 100)
-		
 	End Method
 	
 	
@@ -68,22 +74,19 @@ Class TitleState Extends State
 		End If
 		
 		If KeyHit(KEY_RIGHT) Then currentFrame += 1
-		If currentFrame = frames.Length() Then currentFrame = 0
-		
+		If currentFrame = 8 Then currentFrame = 0
 	End Method
 
 
 	Method Leave:Void()
 	End Method
-End
+End Class
 
 
 Class PlayState Extends State
 
 	Field xpos:Int = 100
 	Field ypos:Int = 100
-	
-
 
 	Method Render:Void()
 		Cls(255, 255, 255)
@@ -94,7 +97,9 @@ Class PlayState Extends State
 		DrawText("Use ARROWS to move, SPACE to end", 0, 20)
 		
 		SetColor 255, 0, 0
-		DrawRect(xpos - 10, ypos - 10, 20, 20)		
+'		DrawRect(VMouseX() -10, VMouseY() -10, 20, 20)
+		
+'		DrawRect(xpos - 10, ypos - 10, 20, 20)
 	End Method
 		
 	
@@ -103,10 +108,10 @@ Class PlayState Extends State
 			Game.EnterState(STATE_ENDSTATE, New FadeInTransition, New FadeOutTransition)
 		End If
 		
-		If KeyDown(KEY_UP) Then ypos -= 2
-		If KeyDown(KEY_DOWN) Then ypos += 2
-		If KeyDown(KEY_LEFT) Then xpos -= 2
-		If KeyDown(KEY_RIGHT) Then xpos += 2		
+		If KeyDown(KEY_UP) Then ypos -= 4
+		If KeyDown(KEY_DOWN) Then ypos += 4
+		If KeyDown(KEY_LEFT) Then xpos -= 4
+		If KeyDown(KEY_RIGHT) Then xpos += 4
 		
 	End Method
 		
@@ -117,7 +122,7 @@ Class PlayState Extends State
 	
 	Method Leave:Void()
 	End Method
-End
+End Class
 
 
 Class EndState Extends State
@@ -141,4 +146,4 @@ Class EndState Extends State
 	Method Leave:Void()
 	End Method
 	
-End
+End Class

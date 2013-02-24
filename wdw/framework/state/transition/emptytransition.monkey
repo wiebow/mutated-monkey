@@ -1,8 +1,6 @@
 
 Strict
-
 Import transition
-
 
 
 'summary: An empty game state transition.

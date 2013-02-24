@@ -1,7 +1,6 @@
 
 Strict
-
-Import wdw.framework.game
+Import wdw.framework.fwgame
 
 
 'summary: A game state template.
@@ -10,10 +9,10 @@ Class State Abstract
 	Private
 	
 	'Game holding this state.
-	Field _game:Game
+	Field game:fwGame
 	
 	'ID of this State.
-	Field _id:Int
+	Field id:Int
 	
 	Public
 	
@@ -38,25 +37,25 @@ Class State Abstract
 	Method Render:Void() Abstract
 	
 
-	Method Id:Void(id:Int) Property
-		_id = id
+	Method Id:Void(newId:Int) Property
+		id = newId
 	End
 	
 	
 	'summary: Returns the ID of this state.
 	Method Id:Int() Property
-		Return _id
+		Return id
 	End
 	
 
-	Method Game:Void(g:Game) Property
-		_game = g
+	Method Game:Void(g:fwGame) Property
+		game = g
 	End
 	
 	
 	'summary: Returns the game owning this state.
-	Method Game:Game() Property
-		Return _game
+	Method Game:fwGame() Property
+		Return game
 	End
 
 End

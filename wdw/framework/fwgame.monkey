@@ -1,15 +1,14 @@
 
 Strict
-
 Import mojo
 Import wdw.tools.bag
 Import state
 Import state.transition.emptytransition
-Import resources
+Import wdw.framework.autofit
 
 
 'summary: A state based game, with transitions.
-Class Game
+Class fwGame
 
 	Private
 	
@@ -33,15 +32,23 @@ Class Game
 	
 	'The transition to play when entering this state.
 	Field enterTransition:Transition
-		
+	
+	
+	Field usingVirtualResolution:Bool
+	
+	
 	Public
+
+	'virtual game resolution, not physical resolution
+'	Field gameWidth:Int
+'	Field gameHeight:Int
 	
 	
 	#rem
 	summary: User hook to perform game startup logic.
 	Called when the game is started.
 	#end
-	Method Init:Void()
+	Method Initialize:Void()
 	End
 	
 	
@@ -70,6 +77,7 @@ Class Game
 	
 	
 	Method Update:Void()
+		currentState.Update()
 		If leaveTransition
 			leaveTransition.Update()
 			If leaveTransition.IsComplete()
@@ -81,30 +89,29 @@ Class Game
 				If enterTransition Then enterTransition.Init()
 			Else
 				Return
-			End
-		End
-		
+			EndIf
+		EndIf		
 		If enterTransition
 			enterTransition.Update()
 			If enterTransition.IsComplete()
 				enterTransition = Null
 			Else
 				Return
-			End
-		End
-		currentState.Update()
+			EndIf
+		EndIf
 	End
 		
 	
 	'renders the current game state.
-	Method Render:Void()	
+	Method Render:Void()
+		If usingVirtualResolution Then UpdateVirtualDisplay()
+		
 		currentState.Render()
-				
 		If leaveTransition
 			leaveTransition.Render()
 		ElseIf enterTransition
 			enterTransition.Render()
-		End
+		EndIf
 	End
 	
 		
@@ -112,13 +119,10 @@ Class Game
 	Method EnterState:Void(id:Int, enter:Transition = Null, leave:Transition = Null)
 		If Not enter Then enter = New EmptyTransition
 		If Not leave Then leave = New EmptyTransition
-		
 		enterTransition = enter
 		leaveTransition = leave
-		
 		nextState = GetStateByID(id)
 		If Not nextState Then Error("Cannot find state with ID: " + id)
-		
 		leaveTransition.Init()
 	End
 		
@@ -142,5 +146,11 @@ Class Game
 	Method GetStateByID:State(id:Int)
 		Return gameStates.Get(id)
 	End
+	
+	
+	Method SetGameResolution:Void(width:Int, height:Int)
+		SetVirtualDisplay(width, height)
+		usingVirtualResolution = True
+	End Method
 	
 End

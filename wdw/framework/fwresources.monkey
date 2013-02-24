@@ -1,29 +1,16 @@
 
-' simple resource manager
-
 Strict
-
 Import mojo
 
 
 #REM
-summary: A simple resource mananger.
+summary: A resource mananger.
 This class is not instantiated. You can use its functions from anywhere.
 #END
-Class Resources
-
-	Private
-	
-	Global images:= New StringMap<Image>
-	Global sounds:= New StringMap<Sound>
-	Global frames:= New StringMap<Image[] >
-	
-	Public
-	
-	
-	'summary: Uses grabimage to store the image frames.
-	'discards the original image. all frames must be the same size.
-	'first frame is 0
+Class fwResources
+		
+	'summary: Uses Grabimage() to store the image frames.
+	'Discards the original image. All frames must be the same size, first frame is 0
 	Function StoreImageFrames:Void(imageName:String, img:Image, cellWidth:int, cellHeight:Int)
 		Local framesAmount:Int = (img.Width() / cellWidth) * (img.Height() / cellHeight)
 		Local newFrames:Image[] = New Image[framesAmount]
@@ -44,7 +31,7 @@ Class Resources
 	
 	
 	Function StoreImage:Void(imageName:String, img:Image)
-		If img = Null Then Error("no pic!")
+		If img = Null Then Error("no image!")
 		images.Set(imageName, img)
 	End Function
 	
@@ -69,4 +56,10 @@ Class Resources
 		Return sounds.ValueForKey(soundName)
 	End Function
 
+
+	Private
+	
+	Global images:= New StringMap<Image>
+	Global sounds:= New StringMap<Sound>
+	Global frames:= New StringMap<Image[] >
 End Class
