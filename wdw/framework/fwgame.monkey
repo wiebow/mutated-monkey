@@ -4,11 +4,11 @@ Import mojo
 Import wdw.tools.bag
 Import state
 Import state.transition.emptytransition
-Import wdw.framework.autofit
+Import autofit
 
 
 'summary: A state based game, with transitions.
-Class fwGame
+Class fwGame extends App
 
 	Private
 	
@@ -32,9 +32,13 @@ Class fwGame
 	
 	'The transition to play when entering this state.
 	Field enterTransition:Transition
+
+	'Game update rate	
+	Field updateRate:Int = 60
 	
-	
-	Field usingVirtualResolution:Bool
+	Field isPaused:Bool
+	Field isRunning:Bool
+'	Field usingVirtualResolution:Bool
 	
 	
 	Public
@@ -42,7 +46,103 @@ Class fwGame
 	'virtual game resolution, not physical resolution
 '	Field gameWidth:Int
 '	Field gameHeight:Int
+
+
+
+	#Rem
+	summary: Creates a new engine.
+	Default update rate is 60 hertz.
+	#end
+	Method New(rate:Int = 60)
+		updateRate = rate
+	End Method
+
 	
+	'summary: Returns the game pause mode.
+	Method Paused:Bool() Property
+		Return isPaused
+	End
+		
+	
+	'summary: Sets the game pause mode.
+	Method Paused:Void(value:Bool) Property
+		isPaused = value
+	End
+	
+	
+	'summary: Returns true if the game is running.
+	Method Running:Bool() Property
+		Return isRunning
+	End
+			
+	
+	'summary: Sets the game running value.
+	Method Running:Void(value:Bool) Property
+		isRunning = value
+	End
+	
+		
+	'summary: Sets the game update rate.	
+	Method Rate:Void(rate:Int) Property
+		updateRate = rate
+	End
+
+
+
+	Method OnCreate:Int()
+		Self.Initialize()
+		SetUpdateRate(updateRate)
+		isRunning = True
+		isPaused = False
+		Return 0
+	End Method
+	
+	
+	Method OnUpdate:Int()
+		If isRunning = True
+			If isPaused = False Then Self.Update()
+			If Self.CloseRequested = True Then Self.Shutdown()
+		End
+		Return 0
+	End Method
+		
+	
+	Method OnRender:int()
+		Self.Render()
+		Return 0	
+	End Method
+	
+		
+	'Called when the engine is suspended.	
+	Method OnSuspend:Int()
+		isPaused = True
+		Return 0
+	End
+		
+	
+	'Called when the engine is resuming.
+	Method OnResume:Int()
+		isPaused = False
+		Return 0
+	End
+	
+		
+	'Called when the app is loading resources.
+	Method OnLoading:Int()
+		Return 0
+	End
+	
+	
+	
+	Method Shutdown:Void()
+		
+	End
+	
+	
+	Method GetUpdateRate:Int()
+		Return updateRate
+	End Method
+
 	
 	#rem
 	summary: User hook to perform game startup logic.
@@ -104,7 +204,7 @@ Class fwGame
 	
 	'renders the current game state.
 	Method Render:Void()
-		If usingVirtualResolution Then UpdateVirtualDisplay()
+'		If usingVirtualResolution Then UpdateVirtualDisplay()
 		
 		currentState.Render()
 		If leaveTransition
@@ -128,7 +228,7 @@ Class fwGame
 		
 	
 	'summary: Adds a state to this game. First state added becomes the current state.
-	Method AddGameState:Void(s:State, id:Int)
+	Method AddState:Void(s:State, id:Int)
 		gameStates.Set(id, s)
 		s.Game = Self
 		s.Id = id
@@ -149,8 +249,8 @@ Class fwGame
 	
 	
 	Method SetGameResolution:Void(width:Int, height:Int)
-		SetVirtualDisplay(width, height)
-		usingVirtualResolution = True
+'		SetVirtualDisplay(width, height)
+'		usingVirtualResolution = True
 	End Method
 	
 End

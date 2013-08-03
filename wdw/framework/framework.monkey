@@ -1,9 +1,10 @@
 
 'State based 2D game framework for Monkey.
 
-Import fwengine
 Import fwgame
 Import fwresources
+Import fwtext
+Import fwdigitaltouchstick
 
 Import state.transition.fadeintransition
 Import state.transition.fadeouttransition

@@ -1,41 +1,6 @@
 <?xml version="1.0"?>
-<JiProj xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" EntryPoint=".\examples\simple_game\simple_game.monkey" Name="framework">
+<JiProj xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" EntryPoint=".\examples\simple_game\simple_game.monkey" Name="framework">
   <Files>
-    <Document Filename=".\autofit\autofit.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
-      <DocGUID />
-      <CursorPos>
-        <X>0</X>
-        <Y>0</Y>
-      </CursorPos>
-    </Document>
-    <Document Filename=".\autofit\autofitdemo.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
-      <DocGUID />
-      <CursorPos>
-        <X>0</X>
-        <Y>0</Y>
-      </CursorPos>
-    </Document>
-    <Document Filename=".\autofit\autofitsimplerdemo.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
-      <DocGUID />
-      <CursorPos>
-        <X>0</X>
-        <Y>0</Y>
-      </CursorPos>
-    </Document>
-    <Document Filename=".\autofit\codepath.txt" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
-      <DocGUID />
-      <CursorPos>
-        <X>0</X>
-        <Y>0</Y>
-      </CursorPos>
-    </Document>
-    <Document Filename=".\autofit\info.txt" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
-      <DocGUID />
-      <CursorPos>
-        <X>0</X>
-        <Y>0</Y>
-      </CursorPos>
-    </Document>
     <Document Filename=".\examples\simple_game\simple_game.data\mannetje.png" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
@@ -99,7 +64,7 @@
         <Y>0</Y>
       </CursorPos>
     </Document>
-    <Document Filename=".\fwengine.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+    <Document Filename=".\fwdigitaltouchstick.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
       <DocGUID />
       <CursorPos>
         <X>0</X>
@@ -120,6 +85,20 @@
         <Y>0</Y>
       </CursorPos>
     </Document>
+    <Document Filename=".\fwtext.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+      <DocGUID />
+      <CursorPos>
+        <X>0</X>
+        <Y>0</Y>
+      </CursorPos>
+    </Document>
+    <Document Filename=".\fwtouchstick.monkey" Open="false" SplitView="false" SplitIsVertical="false" SplitSize="150">
+      <DocGUID />
+      <CursorPos>
+        <X>0</X>
+        <Y>0</Y>
+      </CursorPos>
+    </Document>
   </Files>
-  <CompilerConfig Configuration="debug" BuildMode="run" Target="html5" />
+  <CompilerConfig Configuration="debug" BuildMode="run" Target="Html5_Game" />
 </JiProj>
