@@ -1,11 +1,21 @@
 
-'unit tests for wdw.tools.rectangle
+'unit tests for wdw.rectangle
 
 Strict
 
 Import wdw.unittest
-Import wdw.tools.rectangle
-Import wdw.tools.vector2d
+#REFLECTION_FILTER+="*_test"
+
+Import wdw.rectangle
+Import wdw.vector2
+
+
+Function Main:Int()
+	Local t:= New TestSuite
+	t.Run()
+	Return 0
+End
+
 
 
 Class RectTest Extends Test
@@ -44,11 +54,11 @@ Class RectTest Extends Test
 		r.SetPosition(0, 0)
 		r.SetDimension(50, 50)
 		
-		'inside
-		Local p:= New Vector2D(10, 10)
+		'inside??
+		Local p:= New Vector2(10, 10)
 		assertTrue(r.Inside(p), "Is inside")
 		
-		'outside
+		'outside??
 		p.Set(-10, 10)
 		assertFalse(r.Inside(p), "Is outside")
 	End Method

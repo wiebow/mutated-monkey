@@ -1,18 +1,27 @@
 
-'unit tests for wdw.tools.vector2d
+'unit tests for wdw.vector2
 
 Strict
 
 Import wdw.unittest
-Import wdw.tools.vector2d
+#REFLECTION_FILTER+="*_test"
+
+Import wdw.vector2
 
 
-Class Vector2DTest Extends Test
+Function Main:Int()
+	Local t:= New TestSuite
+	t.Run()
+	Return 0
+End
+
+
+Class Vector2Test Extends Test
 	
-	Field v:Vector2D
+	Field v:Vector2
 		
 	Method doBefore:Void() 
-		v = New Vector2D
+		v = New Vector2
 	End
 	
 	Method doAfter:Void()
@@ -21,8 +30,8 @@ Class Vector2DTest Extends Test
 	
 	
 	Method PropertyXTest:Void()
-		v.x = 10.0
-		assertEquals(10.0, v.x, "Property X")
+		v.x = 11.0
+		assertEquals(11.0, v.x, "Property X")
 	End
 	
 	
@@ -42,7 +51,7 @@ Class Vector2DTest Extends Test
 	Method AddVectorTest:Void()
 		v.x = 10
 		v.y = 5
-		v.Add( New Vector2D(2,4))
+		v.Add(New Vector2(2, 4))
 		assertEquals(12.0, v.x, "Add Vector X")
 		assertEquals(9.0, v.y, "Add Vector Y")
 	End
@@ -60,7 +69,7 @@ Class Vector2DTest Extends Test
 	Method SubtractVectorTest:Void()
 		v.x = 10
 		v.y = 5
-		v.Subtract( New Vector2D(2,4))
+		v.Subtract(New Vector2(2, 4))
 		assertEquals(8.0, v.x, "Subtract X")
 		assertEquals(1.0, v.y, "Subtract Y")
 	End
@@ -92,7 +101,7 @@ Class Vector2DTest Extends Test
 	
 	Method DivideVectorTest:Void()
 		v.Set(10,20)
-		v.Divide( New Vector2D(2,4))
+		v.Divide(New Vector2(2, 4))
 		
 		assertEquals(5.0, v.x, "Divide Vector X")
 		assertEquals(5.0, v.y, "Divide Vector Y")
@@ -114,7 +123,7 @@ Class Vector2DTest Extends Test
 	
 	Method CopyTest:Void()
 		v.Set(10,20)
-		Local v2:= New Vector2D
+		Local v2:= New Vector2
 		v2.Copy(v)
 		
 		assertEquals(10.0, v2.x, "1")
@@ -124,7 +133,7 @@ Class Vector2DTest Extends Test
 	
 	Method SwapTest:Void()
 		v.Set(10,20)
-		Local v2:= new Vector2D(15,25)
+		Local v2:= New Vector2(15, 25)
 		v.Swap(v2)
 		
 		assertEquals(15.0, v.x, "1")
@@ -145,7 +154,7 @@ Class Vector2DTest Extends Test
 	
 	Method MultiplyVectorTest:Void()
 		v.Set(1,2)
-		Local v2:= New Vector2D(2,4)
+		Local v2:= New Vector2(2, 4)
 		v.Multiply(v2)
 		
 		assertEquals( 2.0, v.x, "")
@@ -171,7 +180,7 @@ Class Vector2DTest Extends Test
 	
 	Method RotateAboutTest:Void()
 		v.Set(0.0,2.0)
-		v.Rotate( -90.0, New Vector2D(0.0,1.0))
+		v.Rotate(-90.0, New Vector2(0.0, 1.0))
 		assertEquals(135.0, v.Rotation(), "")
 	End
 	

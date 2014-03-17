@@ -1,10 +1,8 @@
 
-'2d vector class.
-
 Strict
 
-'summary: A 2d vector class.
-Class Vector2D
+'summary: A 2d vector class
+Class Vector2
 
 	Field x:Float
 	Field y:Float
@@ -18,8 +16,8 @@ Class Vector2D
 	
 	
 	'summary: Returns a clone of this vector.
-	Method Clone:Vector2D()	
-		Local v:= new Vector2D
+	Method Clone:Vector2()
+		Local v:= New Vector2
 		v.x = x
 		v.y = y
 		Return v
@@ -27,7 +25,7 @@ Class Vector2D
 	
 	
 	'summary: Copies the values from passed vector to this vector.
-	Method Copy:Void(v:Vector2D)
+	Method Copy:Void(v:Vector2)
 		Self.x = v.x
 		Self.y = v.y
 	End	
@@ -47,7 +45,7 @@ Class Vector2D
 	End	
 	
 	'summary: Adds passed vector to this vector.
-	Method Add:Void(v:Vector2D)
+	Method Add:Void(v:Vector2)
 		Self.x += v.x
 		Self.y += v.y
 	End
@@ -60,7 +58,7 @@ Class Vector2D
 	
 	
 	'summary: Subtracts passed vector from this vector.
-	Method Subtract:Void(v:Vector2D)
+	Method Subtract:Void(v:Vector2)
 		Self.x -= v.x
 		Self.y -= v.y
 	End
@@ -81,7 +79,7 @@ Class Vector2D
 
 	
 	'summary: Devides this vector by passed vector.
-	Method Divide:Void(v:Vector2D)
+	Method Divide:Void(v:Vector2)
 		If v.x = 0.0 or v.y = 0.0 Then Error( "Divide by 0!" )
 		Self.x /= v.x
 		Self.y /= v.y
@@ -94,7 +92,7 @@ Class Vector2D
 	End
 	
 	'summary: Multiplies this vector by passed vector.
-	Method Multiply:Void(v:Vector2D)
+	Method Multiply:Void(v:Vector2)
 		Self.x *= v.x
 		Self.y *= v.y
 	End	
@@ -105,7 +103,7 @@ Class Vector2D
 	End
 
 	'summary: Swaps values between this and passed vector.
-	Method Swap:Void( v:Vector2D)
+	Method Swap:Void(v:Vector2)
 		Local temp:Float = Self.x
 		Self.x = v.x
 		v.x = temp
@@ -117,13 +115,13 @@ Class Vector2D
 	
 		
 	'summary: Returns the dot product of this and passed vector.
-	Method Dot:Float( v:Vector2D )
+	Method Dot:Float(v:Vector2)
 		Return (Self.x * v.x + Self.y * v.y)
 	End
 	
 	
 	'summary: Returns the distance between this and passed vector.
-	Method Distance:Float( v:Vector2D)
+	Method Distance:Float(v:Vector2)
 		Local dx:Float = Self.x - v.x
 		Local dy:Float = Self.y - v.y
 		Return Sqrt(dx*dx + dy*dy )	
@@ -158,7 +156,7 @@ Class Vector2D
 
 	
 	'summary: Rotates this vector with specified amount around passed vector.
-	Method Rotate:Void( theta:Float, v:Vector2D )
+	Method Rotate:Void(theta:Float, v:Vector2)
 		Local cos:Float = Cos(theta)	
 		Local sin:Float = Sin(theta)
 		Self.x -= v.x
@@ -172,7 +170,7 @@ Class Vector2D
 		
 	'summary: Returns a string describing the vector.
 	Method ToString:String()
-		Return "(x: " + Self.x + ", y: " + Self.y + ")"
+		Return "x: " + Self.x + ", y: " + Self.y
 	End Method	
 
 End

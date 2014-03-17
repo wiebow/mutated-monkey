@@ -1,16 +1,25 @@
 
-'unit tests for wdw.tools.bag
+'unit tests for wdw.bag
 
 Strict
 
 Import wdw.unittest
-Import wdw.tools.bag
+#REFLECTION_FILTER+="*_test"
+
+Import wdw.bag
+
+
+Function Main:Int()
+	Local t:= New TestSuite
+	t.Run()
+	Return 0
+End
 
 
 Class BagTest Extends Test
 	
 	Field b:Bag<Dummy>
-		
+	
 	
 	Method doBefore:Void()
 		b = New Bag<Dummy>
@@ -23,9 +32,9 @@ Class BagTest Extends Test
 	
 	
 	Method ConstructorTest:Void()
-		assertEquals(0, b.Size(), "")
-		assertTrue(b.IsEmpty(), "")
-		assertEquals(16, b.Capacity(), "")
+		assertEquals(0, b.Size(), "size of new bag is not zero")
+		assertTrue(b.IsEmpty(), "new bag is not empty")
+		assertEquals(16, b.Capacity(), "default capacity is not 16")
 	End
 	
 	

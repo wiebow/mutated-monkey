@@ -3,7 +3,7 @@ Strict
 
 Import mojo
 
-'summary: Color and Alpha conveniece class.
+'summary: Color and Alpha class.
 Class Color
 
 	Private
@@ -22,8 +22,15 @@ Class Color
 	
 	Public
 	
+	Method New()
+		_r = 255
+		_g = 255
+		_b = 255
+		_a = 1.0
+	End Method
 	
-	'summary: Default constructor
+	
+	'summary: Default constructor.
 	Method New(red:Int, green:Int, blue:Int, alpha:float)
 		_r = red
 		_g = green

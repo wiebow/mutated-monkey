@@ -1,10 +1,19 @@
 
-'unit tests for wdw.tools.color
+'unit tests for wdw.color
 
 Strict
 
 Import wdw.unittest
-Import wdw.tools.color
+#REFLECTION_FILTER+="*_test"
+
+Import wdw.color
+
+Function Main:Int()
+	Local t:= New TestSuite
+	t.Run()
+	Return 0
+End
+
 
 
 Class ColorTest Extends Test
